@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
+import { foodMenu } from './global-variables/food-menu.global-variable';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { MainComponent } from './main/main.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: 'FOODMENU', useValue: foodMenu } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
