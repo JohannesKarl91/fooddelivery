@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +8,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
- constructor(@Inject('FOODMENU') public foodMenu: any[]) { }
+ constructor() { }
 
-ngOnInit(): void {
-  console.log('All items of FOODMENU are:', this.foodMenu)
-}
+ngOnInit(): void { }
 
 }

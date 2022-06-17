@@ -4,28 +4,37 @@
     align-items: center;
     background-color: var(--color-orange);
     padding-top: var(--spacing-xxs);
-    padding-bottom: var(--spacing-xss);
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
 
     h1{
         color: white;
+        font-size: var(--font-size-h3);
     }
 
     img{
-        height: 50px;
-        width: 65px;
+        height: 30px;
+        width: 45px;
     }
 
     .header-logo{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 250px;
+        width: 165px;
 
         &:hover{
             cursor: pointer;
         }
+    }
+
+    span{
+        color: white;
+        font-weight: bold;       
+    }
+
+    .customer-address{
+        border-bottom: 1px solid white;
     }
 }
 
@@ -34,11 +43,11 @@
     justify-content: space-between;
     align-items: center;
     color: white;
-    width: 100px;
+    width: 75px;
 
     img{
-        width: 48px;
-        height: 48px;
+        width: 32px;
+        height: 32px;
         
         &:hover{
             cursor: pointer;
@@ -48,8 +57,8 @@
     .icon-flag{
         border-radius: 50%;
         border: 3px solid white;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
 
         &:hover{
             cursor: pointer;

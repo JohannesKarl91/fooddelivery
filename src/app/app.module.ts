@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { foodMenu } from './global-variables/food-menu.global-variable';
+import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { FoodCartComponent } from './food-cart/food-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    FoodMenuComponent,
+    FoodCartComponent
   ],
   imports: [
     BrowserModule,
