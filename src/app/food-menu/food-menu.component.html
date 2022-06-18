@@ -1,4 +1,29 @@
-<div class="food-menu-header">
-<img class="food-menu-background" src="../assets/img/background_img.jpg">
-<img class="food-menu-logo" src="../assets/img/burger_logo.jpg">
+<div class="food-menu">
+    <div class="food-menu-header">
+        <img class="food-menu-background" src="../assets/img/background_img.jpg">
+        <img class="food-menu-logo" src="../assets/img/burger_logo.jpg">
+    </div>
+
+    <div class="food-menu-data">
+        <h3>Burger Home</h3>
+
+        <div class="food-menu-grade-overview">
+            <div class="food-menu-grade">
+                <img *ngFor="let grade of grades" src="../assets/img/{{ grade }}">
+            </div>
+            <div>
+                <a href="#">( 3.4k Bewertungen )</a>
+            </div>
+        </div>
+
+
+        <div class="food-menu-conditions">
+            <div class="food-menu-single-condition" *ngFor="let condition of conditions">
+                <img src="../assets/img/{{ condition.logo }}">
+                <span>{{ condition.value }}</span>
+            </div>
+        </div>
+        <p class="food-menu-text">Bei diesem Restaurant kannst du Stempel sammeln. Stelle beim Bestellabschluss bitte sicher, dass du dich für
+            unseren Newsletter angemeldet hast, um deine Stempel per E-Mail zu erhalten.</p>
+    </div>
 </div>
