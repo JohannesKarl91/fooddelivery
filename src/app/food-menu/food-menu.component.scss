@@ -21,26 +21,61 @@
 
 .food-menu-data {
     padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+}
+
+.food-menu-data-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.food-menu-data-right {
+    .button-info {
+        margin-left: 0.15px;
+        margin-right: 0.15px;
+        background-color: white;
+        border: 0.5px solid var(--color-black);
+        width: 50px;
+        height: 50px;
+
+        &:hover {
+            cursor: pointer;
+            border-color: var(--color-primary);
+        }
+    }
+
+    .button-favorite {
+        background-color: white;
+        border: 0.5px solid var(--color-black);
+        width: 50px;
+        height: 50px;
+
+        &:hover {
+            cursor: pointer;
+            border-color: var(--color-orange);
+        }
+    }
 }
 
 .food-menu-grade-overview {
     display: flex;
     align-items: center;
     margin-bottom: var(--spacing-xss);
-    
+
     .food-menu-grade {
         display: flex;
         margin-right: 4px;
     }
 
-    a{
+    a {
         text-decoration: none;
         color: var(--color-black);
         font-size: var(--spacing-xs);
 
-        &:hover{
+        &:hover {
             text-decoration: underline;
-            
+
         }
     }
 }
