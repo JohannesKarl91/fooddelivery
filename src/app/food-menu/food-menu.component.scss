@@ -104,3 +104,25 @@
     margin-top: 0;
     margin-bottom: var(--spacing-xss);
 }
+
+
+//Food list section includes all menus of a certain locality
+.food-menu-list {
+
+    .food-menu-list-navbar{
+        display: flex;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--color-whitesmoke);
+        padding-left: var(--spacing-xl);
+        padding-right: var(--spacing-xl);
+    }
+
+    a{
+        margin-right: var(--spacing-xss);
+        margin-left: var(--spacing-xss);
+        text-decoration: none;
+        font-size: 14px;
+    }
+}
