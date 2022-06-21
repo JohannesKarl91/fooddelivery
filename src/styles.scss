@@ -30,7 +30,11 @@ body {
 }
 
 .d-none{
-    display: none;
+    display: none !important;
+}
+
+.d-flex{
+    display: flex;
 }
 
 

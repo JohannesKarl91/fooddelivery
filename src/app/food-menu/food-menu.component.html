@@ -44,12 +44,22 @@
 
     <div class="food-menu-list">
         <div class="food-menu-list-navbar">
-            <a href="#">Vorspeise</a>
-            <a href="#">Klassik Burger</a>
-            <a href="#">Gourmet Burger</a>
-            <a href="#">Beilage</a>
-            <a href="#">Dessert</a>
+            <div class="start-mode" id="start-mode">
+                <img id="search-icon" (click)="openSearchMode()" src="../assets/img/search_black.svg">
+                <a id="anker1" href="#">Vorspeise</a>
+                <a id="anker2" href="#">Klassik Burger</a>
+                <a id="anker3" href="#">Gourmet Burger</a>
+                <a id="anker4" href="#">Beilage</a>
+                <a id="anker5" href="#">Dessert</a>
+            </div>
+
+            <div id="search-mode" class="search-mode d-none">
+                <img src="../assets/img/search_black.svg">
+                <input id="search-menu" placeholder="Gerichte durchstöbern...">
+                <img (click)="closeSearchMode()" src="../assets/img/close_black.svg">
+            </div>
         </div>
+        
         <div class="food-menu-list-items">
             Liste der Gerichte
         </div>

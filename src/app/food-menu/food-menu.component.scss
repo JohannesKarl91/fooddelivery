@@ -109,9 +109,9 @@
 //Food list section includes all menus of a certain locality
 .food-menu-list {
 
-    .food-menu-list-navbar{
+    .food-menu-list-navbar {
+        height: 60px;
         display: flex;
-        height: 50px;
         align-items: center;
         justify-content: space-between;
         background-color: var(--color-whitesmoke);
@@ -119,10 +119,46 @@
         padding-right: var(--spacing-xl);
     }
 
-    a{
+    a {
         margin-right: var(--spacing-xss);
         margin-left: var(--spacing-xss);
         text-decoration: none;
         font-size: 14px;
+    }
+
+    img {
+        width: 25px;
+        height: 25px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .start-mode {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .search-mode {
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+        width: 80%;
+        background-color: white;
+        border: 2px solid var(--color-primary);
+        padding-left: var(--spacing-xss);
+        padding-right: var(--spacing-xss);
+
+        input {
+            width: 40vw;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 12px;
+        }
     }
 }
