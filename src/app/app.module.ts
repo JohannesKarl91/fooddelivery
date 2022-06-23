@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { foodMenu } from './global-variables/food-menu.global-variable';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { FoodCartComponent } from './food-cart/food-cart.component';
+import { FoodMenuListComponent } from './food-menu-list/food-menu-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FoodCartComponent } from './food-cart/food-cart.component';
     FooterComponent,
     MainComponent,
     FoodMenuComponent,
-    FoodCartComponent
+    FoodCartComponent,
+    FoodMenuListComponent
   ],
   imports: [
     BrowserModule,

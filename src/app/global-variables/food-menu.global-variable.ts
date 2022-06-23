@@ -1,4 +1,33 @@
-export const foodMenu: Array<any> = [{
+export const foodMenu: Array<any> = [
+  {
+    name: 'Frittierte Morzarella Sticks',
+    text: 'mit Salsa Dip',
+    category: 'Favorites',
+    price: 6.50,
+    amount: 1
+  },
+  {
+    name: 'Cheeseburger',
+    text: 'Rindfleisch, Tomaten, Salat, Zwiebeln, Gurken, Cheddar Käse, Ketchup & Senf',
+    category: 'Favorites',
+    price: 7.90,
+    amount: 1
+  },
+  {
+    name: 'Pulled Pork Burger',
+    text: 'Geschmorte Schweineschulter mit BBQ-Sauce, hausgemachter Krautsalat & Blattsalat',
+    category: 'Favorites',
+    price: 9.90,
+    amount: 1
+  },
+  {
+    name: 'Devils Food Cake',
+    text: 'Schokokkuchen, serviert mit Vanilleeis, Schlagsahne & Schokosauce',
+    category: 'Favorites',
+    price: 3.90,
+    amount: 1
+  },
+  {
   name: 'Chicken Wings BBQ oder HOT',
   text: 'mit Ranch Dressing',
   category: 'Apetizer',

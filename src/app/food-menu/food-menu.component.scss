@@ -107,9 +107,9 @@
 
 
 //Food list section includes all menus of a certain locality
-.food-menu-list {
+.food-menu-navbar {
 
-    .food-menu-list-navbar {
+    .food-menu-navbar-container {
         height: 60px;
         display: flex;
         align-items: center;
@@ -124,6 +124,9 @@
         margin-left: var(--spacing-xss);
         text-decoration: none;
         font-size: 14px;
+        color: var(--color-black);
+        min-width: 105px;
+        text-align: center;
     }
 
     img {
@@ -139,7 +142,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
     }
 
     .search-mode {

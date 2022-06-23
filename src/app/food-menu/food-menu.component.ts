@@ -20,11 +20,9 @@ export class FoodMenuComponent implements OnInit {
   favoriteBtn: Boolean = false;
 
 
-  constructor(@Inject('FOODMENU') public foodMenu: any[]) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    console.log('All items of FOODMENU in "food-menu.component.ts" are:', this.foodMenu)
-  }
+  ngOnInit(): void {  }
 
 
   //Via onclick the user can mark the restaurant as a favorite one. 
@@ -72,5 +70,4 @@ export class FoodMenuComponent implements OnInit {
     let startMode = document.getElementById('start-mode');
     startMode?.classList.remove('d-none');
   }
-
 }

@@ -11,7 +11,7 @@
 
                 <div class="food-menu-grade-overview">
                     <div class="food-menu-grade">
-                        <img *ngFor="let grade of grades" src="../assets/img/{{ grade }}">
+                        <img *ngFor="let grade of grades" src="../assets/img/icons/{{ grade }}">
                     </div>
                     <div>
                         <a href="#">( 3.4k Bewertungen )</a>
@@ -21,18 +21,18 @@
 
             <div class="food-menu-data-right">
                 <button class="button-info">
-                    <img src="../assets/img/info_black.svg">
+                    <img src="../assets/img/icons/info_black.svg">
                 </button>
                 <button (click)="changeIntoFavorite()" class="button-favorite">
-                    <img id="button-favorite-unset" src="../assets/img/star_border_black.svg">
-                    <img id="button-favorite-set" class="d-none" src="../assets/img/star_black.svg">
+                    <img id="button-favorite-unset" src="../assets/img/icons/star_border_black.svg">
+                    <img id="button-favorite-set" class="d-none" src="../assets/img/icons/star_black.svg">
                 </button>
             </div>
         </div>
 
         <div class="food-menu-conditions">
             <div class="food-menu-single-condition" *ngFor="let condition of conditions">
-                <img src="../assets/img/{{ condition.logo }}">
+                <img src="../assets/img/icons/{{ condition.logo }}">
                 <span>{{ condition.value }}</span>
             </div>
         </div>
@@ -42,10 +42,11 @@
             unseren Newsletter angemeldet hast, um deine Stempel per E-Mail zu erhalten.</p>
     </div>
 
-    <div class="food-menu-list">
-        <div class="food-menu-list-navbar">
+    <div class="food-menu-navbar">
+        <div class="food-menu-navbar-container">
             <div class="start-mode" id="start-mode">
-                <img id="search-icon" (click)="openSearchMode()" src="../assets/img/search_black.svg">
+                <img id="search-icon" (click)="openSearchMode()" src="../assets/img/icons/search_black.svg">
+                <a id="anker1" href="#">Beliebte</a>
                 <a id="anker1" href="#">Vorspeise</a>
                 <a id="anker2" href="#">Klassik Burger</a>
                 <a id="anker3" href="#">Gourmet Burger</a>
@@ -54,14 +55,12 @@
             </div>
 
             <div id="search-mode" class="search-mode d-none">
-                <img src="../assets/img/search_black.svg">
+                <img src="../assets/img/icons/search_black.svg">
                 <input id="search-menu" placeholder="Gerichte durchstöbern...">
-                <img (click)="closeSearchMode()" src="../assets/img/close_black.svg">
+                <img (click)="closeSearchMode()" src="../assets/img/icons/close_black.svg">
             </div>
         </div>
         
-        <div class="food-menu-list-items">
-            Liste der Gerichte
-        </div>
+        <app-food-menu-list></app-food-menu-list>
     </div>
 </div>
