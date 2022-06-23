@@ -1,7 +1,11 @@
 
 <div class="food-menu-list">
     
-    <div *ngFor="let foodItem of foodMenu"> {{ foodItem.name }}</div>
+    <div *ngFor="let foodItem of foodMenu"> 
+        <span>{{ foodItem.name }}</span><br>
+        <p> {{ foodItem.text }}</p>
+        <p> {{ foodItem.price.toFixed(2) }} €</p>
+    </div>
     
     Liste der Gerichte
 </div>
