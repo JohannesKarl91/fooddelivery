@@ -1,0 +1,21 @@
+.food-menu-list{
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+}
+
+.food-menu-favorite{
+    margin-top: var(--spacing-m);
+}
+
+.food-menu-favorite-header{
+    margin-bottom: var(--spacing-m);
+    height: 60px;
+    background-color: var(--color-whitesmoke);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+
+    font-weight: bold;
+}

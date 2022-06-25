@@ -1,11 +1,11 @@
-
 <div class="food-menu-list">
-    
-    <div *ngFor="let foodItem of foodMenuFavorite"> 
-        <span>{{ foodItem.name }}</span><br>
-        <p> {{ foodItem.text }}</p>
-        <p> {{ foodItem.price.toFixed(2) }} €</p>
+    <div class="food-menu-favorite">
+        <div class="food-menu-favorite-header">Beliebte Gerichte</div>
+        <div *ngFor="let foodItem of foodMenuFavorite">
+            <span>{{ foodItem.name }}</span><br>
+            <p> {{ foodItem.text }}</p>
+            <p> {{ foodItem.price.toFixed(2) }} €</p>
+        </div>
     </div>
-    
     Liste der Gerichte
 </div>
