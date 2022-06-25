@@ -7,10 +7,21 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class FoodMenuListComponent implements OnInit {
 
-  constructor(@Inject('FOODMENU') public foodMenu: any[]) { }
+  constructor(@Inject('FOODMENUFAVORITE') public foodMenuFavorite: any[],
+  @Inject('FOODMENUAPETIZER') public foodMenuApetizer: any[],
+  @Inject('FOODMENUCLASSICBURGER') public foodMenuClassicburger: any[],
+  @Inject('FOODMENUGOURMETBURGER') public foodMenuGourmetburger: any[],
+  @Inject('FOODMENUSIDEDISH') public foodMenuSidedish: any[],
+  @Inject('FOODMENUDESSERT') public foodMenuDessert: any[]) { }
 
   ngOnInit(): void {
-    console.log('All items of FOODMENU in "food-menu.component.ts" are:', this.foodMenu)
+    console.log('All items of FOODMENUFAVORITE in "food-menu.component.ts" are:', this.foodMenuFavorite);
+    console.log('All items of FOODMENUAPETIZER in "food-menu.component.ts" are:', this.foodMenuApetizer);
+    console.log('All items of FOODMENUCLASSICBURGER in "food-menu.component.ts" are:', this.foodMenuClassicburger);
+    console.log('All items of FOODMENUGOURMETBURGER in "food-menu.component.ts" are:', this.foodMenuGourmetburger);
+    console.log('All items of FOODMENUSIDEDISH in "food-menu.component.ts" are:', this.foodMenuSidedish);
+    console.log('All items of FOODMENUDESSERT in "food-menu.component.ts" are:', this.foodMenuDessert);
+
   }
 
 }
