@@ -1,11 +1,28 @@
 <div class="food-menu-list">
     <div class="food-menu-favorite">
-        <div class="food-menu-favorite-header">Beliebte Gerichte</div>
-        <div *ngFor="let foodItem of foodMenuFavorite">
-            <span>{{ foodItem.name }}</span><br>
-            <p> {{ foodItem.text }}</p>
-            <p> {{ foodItem.price.toFixed(2) }} €</p>
+        <div class="food-menu-list-header-section">Beliebte Gerichte</div>
+        <div class="food-menu-list-section" *ngFor="let foodItem of foodMenuFavorite">
+            <div class="food-menu-list-info">
+                <span><strong>{{ foodItem.name }}</strong></span><br>
+                <p class="food-menu-list-info-text">{{ foodItem.text }}</p>
+                <p class="food-menu-list-info-price"><strong>{{ foodItem.price.toFixed(2) }} €</strong></p>
+            </div>
+            <button><img src="../assets/img/icons/add_black.svg"></button>
         </div>
     </div>
-    Liste der Gerichte
+
+    <div class="food-menu-favorite">
+        <div class="food-menu-header">
+            <img class="food-menu-img" src="../assets/img/food-menu/vorspeise.jpg">
+            <div class="food-menu-list-header-section">Vorpseisen</div>
+        </div>
+        <div class="food-menu-list-section" *ngFor="let foodItem of foodMenuApetizer">
+            <div class="food-menu-list-info">
+                <span><strong>{{ foodItem.name }}</strong></span><br>
+                <p class="food-menu-list-info-text">{{ foodItem.text }}</p>
+                <p class="food-menu-list-info-price"><strong>{{ foodItem.price.toFixed(2) }} €</strong></p>
+            </div>
+            <button><img src="../assets/img/icons/add_black.svg"></button>
+        </div>
+    </div>
 </div>

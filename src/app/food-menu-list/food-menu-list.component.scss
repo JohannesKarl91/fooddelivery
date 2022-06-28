@@ -1,21 +1,75 @@
-.food-menu-list{
+.food-menu-list {
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
-}
 
-.food-menu-favorite{
-    margin-top: var(--spacing-m);
-}
 
-.food-menu-favorite-header{
-    margin-bottom: var(--spacing-m);
-    height: 60px;
-    background-color: var(--color-whitesmoke);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
+    .food-menu-favorite {
+        margin-top: var(--spacing-m);
 
-    font-weight: bold;
+        .food-menu-img{
+            width: 100%;
+            height: 15vh;
+            object-fit: cover;
+            margin: 0;
+        }
+        
+        .food-menu-header{
+            background-color: var(--color-whitesmoke);
+        }
+    }
+
+    .food-menu-list-header-section {
+        margin-bottom: var(--spacing-m);
+        height: 60px;
+        background-color: var(--color-whitesmoke);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: var(--spacing-xs);
+        padding-right: var(--spacing-xs);
+
+        font-weight: bold;
+    }
+
+
+    .food-menu-list-section {
+        border: 0.5px solid lightgrey;
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: var(--spacing-xss);
+
+        button {
+            height: 4vh;
+            width: 4vw;
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 4px;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            border-left: 0.5px solid lightgrey;
+            border-bottom: 0.5px solid lightgrey;
+
+            img{
+                object-fit: contain;
+            }
+        }
+
+        .food-menu-list-info {
+            padding-top: var(--spacing-xss);
+            padding-left: var(--spacing-xss);
+            padding-right: var(--spacing-xss);
+
+            .food-menu-list-info-text {
+                font-size: 10px;
+            }
+
+            .food-menu-list-info-price {
+                font-size: var(--font-size-p);
+                color: var(--color-orange);
+            }
+        }
+    }
 }
