@@ -32,23 +32,22 @@
 
 .food-menu-data-right {
     .button-info {
-        margin-left: 0.15px;
-        margin-right: 0.15px;
         background-color: white;
         border: 0.5px solid var(--color-black);
-        width: 50px;
+        min-width: 50px;
         height: 50px;
 
         &:hover {
             cursor: pointer;
             border-color: var(--color-primary);
+            
         }
     }
 
     .button-favorite {
         background-color: white;
         border: 0.5px solid var(--color-black);
-        width: 50px;
+        min-width: 50px;
         height: 50px;
 
         &:hover {

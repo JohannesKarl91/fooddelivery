@@ -3,7 +3,7 @@ export const foodMenuFavorite: Array<any> = [
   {
     name: 'Frittierte Morzarella Sticks',
     text: 'mit Salsa Dip',
-    category: 'Favorites',
+    category: 'Apetizer',
     price: 6.50,
     amount: 1,
     id: 3
@@ -11,7 +11,7 @@ export const foodMenuFavorite: Array<any> = [
   {
     name: 'Cheeseburger',
     text: 'Rindfleisch, Tomaten, Salat, Zwiebeln, Gurken, Cheddar Käse, Ketchup & Senf',
-    category: 'Favorites',
+    category: 'Classic Burger',
     price: 7.90,
     amount: 1,
     id: 6
@@ -19,7 +19,7 @@ export const foodMenuFavorite: Array<any> = [
   {
     name: 'Pulled Pork Burger',
     text: 'Geschmorte Schweineschulter mit BBQ-Sauce, hausgemachter Krautsalat & Blattsalat',
-    category: 'Favorites',
+    category: 'Gourmet Burger',
     price: 9.90,
     amount: 1,
     id: 12
@@ -27,7 +27,7 @@ export const foodMenuFavorite: Array<any> = [
   {
     name: 'Devils Food Cake',
     text: 'Schokokkuchen, serviert mit Vanilleeis, Schlagsahne & Schokosauce',
-    category: 'Favorites',
+    category: 'Dessert',
     price: 3.90,
     amount: 1,
     id: 20
