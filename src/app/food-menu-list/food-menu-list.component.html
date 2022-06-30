@@ -1,4 +1,3 @@
-<!--Problem: Duplicates between favorite items and the items of other food categories-->
 <div class="food-menu-list">
     <!--Problem: Duplicates between favorite items and the items of other food categories-->
     <!-- <div class="food-menu-favorite">
@@ -50,7 +49,7 @@
             <img class="food-menu-img" src="../assets/img/food-menu/gourmet-burger.jpg">
             <div id="gourmetBurger" class="food-menu-list-header-section">Gourmet Burger</div>
         </div>
-        <div (click)="addGourmetburgerToCart(i)" class="food-menu-list-section" *ngFor="let foodItem of foodMenuClassicburger; let i = index">
+        <div (click)="addGourmetburgerToCart(i)" class="food-menu-list-section" *ngFor="let foodItem of foodMenuGourmetburger; let i = index">
             <div class="food-menu-list-info">
                 <span><strong>{{ foodItem.name }}</strong></span><br>
                 <p class="food-menu-list-info-text">{{ foodItem.text }}</p>

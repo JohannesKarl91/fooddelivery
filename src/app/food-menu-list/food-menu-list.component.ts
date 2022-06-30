@@ -26,7 +26,23 @@ export class FoodMenuListComponent implements OnInit {
   }
 
 
-  //--  Add-functions for all categories  --//
+  //--*  Add-functions for all categories  *--//
+  //Problem: Duplicates between favorite items and the items of other food categories
+  addFavoriteToCart(id: any) {
+    var foodItem = this.foodMenuFavorite[id];
+
+    if (this.foodItemsToFoodCart.includes(foodItem)) {
+      let position = this.foodItemsToFoodCart.indexOf(foodItem);
+      this.foodItemsToFoodCart[position].amount++;
+      console.log('foodItemCart', this.foodItemsToFoodCart)
+    }
+    else {
+      this.foodItemsToFoodCart.push(foodItem);
+      console.log('foodItemCart', this.foodItemsToFoodCart)
+    }
+  }
+  
+  
   addApetizerToCart(id: any) {
     var foodItem = this.foodMenuApetizer[id];
 
