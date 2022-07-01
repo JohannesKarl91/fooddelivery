@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "devfood-jkw": {
+      "hosting": {
+        "food-delivery": [
+          "devfood-jkw"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "devfood-jkw"
+  }
+}

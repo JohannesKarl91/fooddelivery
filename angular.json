@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "food-delivery:build:production",
+            "firebaseProject": "devfood-jkw",
+            "firebaseHostingSite": "devfood-jkw"
+          }
         }
       }
     }
