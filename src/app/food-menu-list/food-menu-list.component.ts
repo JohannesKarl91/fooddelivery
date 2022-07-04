@@ -1,4 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Provider } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-food-menu-list',
@@ -6,10 +7,10 @@ import { Component, OnInit, Inject } from '@angular/core';
   styleUrls: ['./food-menu-list.component.scss']
 })
 export class FoodMenuListComponent implements OnInit {
-  foodItemsToFoodCart: Array<any> = [];
+  foodItemsToFoodCart : Array<any> = [];
 
 
-  constructor(@Inject('FOODMENUFAVORITE') public foodMenuFavorite: any[],
+  constructor(public firestore: AngularFirestore, @Inject('FOODMENUFAVORITE') public foodMenuFavorite: any[],
     @Inject('FOODMENUAPETIZER') public foodMenuApetizer: any[],
     @Inject('FOODMENUCLASSICBURGER') public foodMenuClassicburger: any[],
     @Inject('FOODMENUGOURMETBURGER') public foodMenuGourmetburger: any[],
@@ -41,19 +42,21 @@ export class FoodMenuListComponent implements OnInit {
       console.log('foodItemCart', this.foodItemsToFoodCart)
     }
   }
-  
-  
+
+
   addApetizerToCart(id: any) {
     var foodItem = this.foodMenuApetizer[id];
 
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
   }
 
@@ -64,11 +67,13 @@ export class FoodMenuListComponent implements OnInit {
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
   }
 
@@ -79,11 +84,13 @@ export class FoodMenuListComponent implements OnInit {
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
   }
 
@@ -94,11 +101,13 @@ export class FoodMenuListComponent implements OnInit {
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
   }
 
@@ -109,11 +118,23 @@ export class FoodMenuListComponent implements OnInit {
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
-      console.log('foodItemCart', this.foodItemsToFoodCart)
+      console.log('foodItemCart', this.foodItemsToFoodCart);
+      this.saveCartContentToLocalstorage()
     }
   }
+
+
+  //Save local cart array data in local storage for further use in food-cart component.
+  saveCartContentToLocalstorage() {
+    var foodCartToJSON = JSON.stringify(this.foodItemsToFoodCart);
+    localStorage.setItem('cart', foodCartToJSON); 
+  }
 }
+
+
+
