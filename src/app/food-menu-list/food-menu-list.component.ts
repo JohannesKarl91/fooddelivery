@@ -17,14 +17,7 @@ export class FoodMenuListComponent implements OnInit {
     @Inject('FOODMENUSIDEDISH') public foodMenuSidedish: any[],
     @Inject('FOODMENUDESSERT') public foodMenuDessert: any[]) { }
 
-  ngOnInit(): void {
-    console.log('All items of FOODMENUFAVORITE in "food-menu.component.ts" are:', this.foodMenuFavorite);
-    console.log('All items of FOODMENUAPETIZER in "food-menu.component.ts" are:', this.foodMenuApetizer);
-    console.log('All items of FOODMENUCLASSICBURGER in "food-menu.component.ts" are:', this.foodMenuClassicburger);
-    console.log('All items of FOODMENUGOURMETBURGER in "food-menu.component.ts" are:', this.foodMenuGourmetburger);
-    console.log('All items of FOODMENUSIDEDISH in "food-menu.component.ts" are:', this.foodMenuSidedish);
-    console.log('All items of FOODMENUDESSERT in "food-menu.component.ts" are:', this.foodMenuDessert);
-  }
+  ngOnInit(): void {  }
 
 
   //--*  Add-functions for all categories  *--//
