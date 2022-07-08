@@ -1,5 +1,24 @@
-<p>food-cart works!</p>
+<div class="food-cart">
+    <h3 class="cart-header">Warenkorb</h3>
 
-<div *ngFor="let foodCartItem of foodCart">
-    <span> {{ foodCartItem.name }}</span>
+    <div *ngIf="emptyCart" class="food-cart-none-items">
+        <img src="../assets/img/icons/shopping_bag_black_48dp.svg">
+        <span>Fülle Deinen Warenkorb</span>
+        <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
+    </div>
+
+    <div *ngIf="!emptyCart">
+        <div class="food-cart-item">
+            <p>{{ foodCart[0]['amount'] }}</p>
+            <div>
+                <p>{{ foodCart[0]['name'] }}</p>
+                <p class="food-cart-text">{{ foodCart[0]['text'] }}</p>
+            </div>
+            <p>{{ foodCart[0]['price'].toFixed(2) }} €</p>
+        </div>
+        <div class="food-cart-amounts">
+            <button (click)="increaseAmount(0)"><img src="../assets/img/icons/add_black.svg"></button>
+            <button (click)="decreaseAmount(0)"><img src="../assets/img/icons/remove_black_24dp.svg"></button>
+        </div>
+    </div>
 </div>
