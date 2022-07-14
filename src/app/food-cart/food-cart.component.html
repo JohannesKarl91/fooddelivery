@@ -7,18 +7,20 @@
         <p>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</p>
     </div>
 
-    <div *ngIf="!emptyCart">
-        <div class="food-cart-item">
-            <p>{{ foodCart[0]['amount'] }}</p>
-            <div>
-                <p>{{ foodCart[0]['name'] }}</p>
-                <p class="food-cart-text">{{ foodCart[0]['text'] }}</p>
+    <div class="food-cart-container" *ngIf="!emptyCart">
+        <div class="food-cart-element" *ngFor="let foodCartElement of foodCart; let i = index">
+            <div class="food-cart-item">
+                <p>{{ foodCartElement.amount }}</p>
+                <div class="food-cart-item-description">
+                    <p>{{ foodCartElement.name }}</p>
+                    <p class="food-cart-text">{{ foodCartElement.text }}</p>
+                </div>
+                <p>{{ foodCartElement.price.toFixed(2) }} €</p>
             </div>
-            <p>{{ foodCart[0]['price'].toFixed(2) }} €</p>
-        </div>
-        <div class="food-cart-amounts">
-            <button (click)="increaseAmount(0)"><img src="../assets/img/icons/add_black.svg"></button>
-            <button (click)="decreaseAmount(0)"><img src="../assets/img/icons/remove_black_24dp.svg"></button>
+            <div class="food-cart-amounts">
+                <button (click)="increaseAmount(i)"><img src="../assets/img/icons/add_black.svg"></button>
+                <button (click)="decreaseAmount(i)"><img src="../assets/img/icons/remove_black_24dp.svg"></button>
+            </div>
         </div>
     </div>
 </div>

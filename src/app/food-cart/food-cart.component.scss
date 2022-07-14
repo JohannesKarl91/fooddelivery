@@ -43,7 +43,11 @@
         display: flex;
         font-size: 12px;
         min-width: 250px;
-        justify-content: space-around;
+        
+        .food-cart-item-description{
+            margin-left: 4px;
+            margin-right: 4px;
+        }
     }
 
     .food-cart-text{
@@ -66,5 +70,12 @@
             border: 0.5px solid lightgrey;
             cursor: pointer;
         }
+    }
+
+    .food-cart-container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4px;
     }
 }

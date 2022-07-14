@@ -36,12 +36,25 @@ export class FoodCartComponent implements OnInit {
     this.checkEmptyCart();
   }
 
+
   decreaseAmount(arrayId: number) {
     let arrayElement = this.foodCart[arrayId];
     arrayElement.amount--;
 
+    this.checkAmountToZero(arrayId);
     this.updateLocalStorage();
     this.checkEmptyCart();
+  }
+
+
+  checkAmountToZero(arrayId: number) {
+    let arrayElement = this.foodCart[arrayId];
+    
+    if (arrayElement.amount <= 0) {
+      this.foodCart.splice(arrayId, 1);
+      this.updateLocalStorage();
+      this.checkEmptyCart();
+    }
   }
 
 
