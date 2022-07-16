@@ -43,22 +43,23 @@
         display: flex;
         font-size: 12px;
         min-width: 250px;
-        
-        .food-cart-item-description{
+
+        .food-cart-item-description {
             margin-left: 4px;
             margin-right: 4px;
+            width: 16vw;
         }
     }
 
-    .food-cart-text{
+    .food-cart-text {
         font-size: 10px;
     }
 
-    .food-cart-amounts{
+    .food-cart-amounts {
         display: flex;
         justify-content: flex-end;
 
-        button{
+        button {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -72,10 +73,33 @@
         }
     }
 
-    .food-cart-container{
+    .food-cart-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 4px;
+    }
+
+    .food-cart-sum-container {
+        font-size: 12px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .food-cart-sum-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px;
+            width: 90%;
+        }
+
+        button{
+            margin-top: 8px;
+            width: 90%;
+            height: 50px;
+            cursor: pointer;
+        }
     }
 }
