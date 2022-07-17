@@ -100,6 +100,17 @@
             width: 90%;
             height: 50px;
             cursor: pointer;
+            border: 1px solid var(--color-black);
+            color: var(--color-black);
+            font-weight: bold;
         }
     }
+}
+
+.d-lightgrey{
+    background-color: lightgrey;
+}
+
+.d-primary{
+    background-color: var(--color-primary);
 }

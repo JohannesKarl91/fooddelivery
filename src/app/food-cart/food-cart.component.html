@@ -40,6 +40,6 @@
                 <span>{{ this.totalCosts.toFixed(2) }} €</span>
         </div>
         
-        <button>Bezahlen ({{ this.totalCosts.toFixed(2) }} €)</button>
+        <button [className]="achievedMinimumSum ? 'd-primary' : 'd-lightgrey'">Bezahlen ({{ this.totalCosts.toFixed(2) }} €)</button>
     </div>
 </div>

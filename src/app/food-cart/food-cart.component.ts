@@ -11,16 +11,31 @@ export class FoodCartComponent implements OnInit {
   foodCartSum: any = 0;
   deliveryCosts = 1;
   totalCosts: any = this.foodCartSum + this.deliveryCosts;
+  achievedMinimumSum: Boolean = false;
 
 
   constructor() { }
 
+  //Section renders & updates food cart OnInit or by changing amounts of food items.
   ngOnInit(): void {
+    this.renderFoodCart();
+  }
+
+
+  renderFoodCart() {
     this.loadCartFromLocalStorage();
     this.checkEmptyCart();
     this.calculateCartSum();
+    this.checkMinimumSum();
   }
 
+
+  updateFoodCart() {
+    this.updateLocalStorage();
+    this.checkEmptyCart();
+    this.calculateCartSum();
+    this.checkMinimumSum();
+  }
 
 
 
@@ -31,14 +46,14 @@ export class FoodCartComponent implements OnInit {
     }
   }
 
-  // User is able to change the amount of foot item in cart.
+
+
+  // User is able to change the amount of food item in cart.
   increaseAmount(arrayId: number) {
     let arrayElement = this.foodCart[arrayId];
     arrayElement.amount++;
 
-    this.updateLocalStorage();
-    this.checkEmptyCart();
-    this.calculateCartSum();
+    this.updateFoodCart();
   }
 
 
@@ -47,9 +62,7 @@ export class FoodCartComponent implements OnInit {
     arrayElement.amount--;
 
     this.checkAmountToZero(arrayId);
-    this.updateLocalStorage();
-    this.checkEmptyCart();
-    this.calculateCartSum();
+    this.updateFoodCart();
   }
 
 
@@ -61,8 +74,10 @@ export class FoodCartComponent implements OnInit {
       this.emptyCart = true;
       this.updateLocalStorage();
       this.checkEmptyCart();
+      this.checkMinimumSum();
     }
   }
+
 
 
   //Calculation of food cart sum section
@@ -75,12 +90,38 @@ export class FoodCartComponent implements OnInit {
     }
 
     this.totalCosts = this.foodCartSum + this.deliveryCosts;
-    console.log('this.foodCartSum', this.foodCartSum)
+    // console.log('this.foodCartSum', this.foodCartSum);
   }
 
 
+  checkMinimumSum() {
+    let calculatedSum: Number = this.foodCartSum;
+    console.log('calculatedSum', calculatedSum)
 
-  //*---------- LocalStorage Section ----------//*
+    if (calculatedSum > 6) {
+      this.achievedMinimumSum = true;
+      console.log('this.achievedMinimumSum', this.achievedMinimumSum)
+    }
+    else if (calculatedSum <= 6) {
+      this.achievedMinimumSum = false;
+    }
+  }
+
+
+  // renderOrderButton() {
+  //   let buttonElement = document.getElementById('CartOrderButton');
+  //   buttonElement
+
+
+  //   // if (this.foodCartSum >= 6) {
+  //   //   orderBtn?.classList.remove('d-lightgrey');
+  //   //   orderBtn?.classList.add('d-primary');
+  //   //   console.log('Content of this.foodCartSum in function "renderOrderButton()', this.foodCartSum)
+  //   // }
+  // }
+
+
+  //*---------- LocalStorage Section ----------*//
   //Methods for Loading and saving local cart array data in local storage for further use in food-cart component.
   updateLocalStorage() {
     this.saveCartContentToLocalstorage();
@@ -95,6 +136,6 @@ export class FoodCartComponent implements OnInit {
   loadCartFromLocalStorage() {
     var cartAsText = localStorage.getItem('cart') || '{}';
     this.foodCart = JSON.parse(cartAsText);
-    console.log('this.foodCart from food-cart.component.ts', this.foodCart)
+    // console.log('this.foodCart from food-cart.component.ts', this.foodCart)
   }
 }

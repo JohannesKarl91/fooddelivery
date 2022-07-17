@@ -41,6 +41,15 @@ body {
     font-weight: bold;
 }
 
+.d-lightgrey{
+    background-color: lightgrey;
+}
+
+.d-primary{
+    background-color: var(--color-primary);
+    color: var(--color-whitesmoke) !important;
+}
+
 
 /* lato-100 - latin */
 @font-face {
