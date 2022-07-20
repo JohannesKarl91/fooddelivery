@@ -13,8 +13,10 @@ export class FoodCartComponent implements OnInit {
   totalCosts: any = this.foodCartSum + this.deliveryCosts;
   achievedMinimumSum: Boolean = false;
 
+  
 
-  constructor() { }
+
+  constructor( ) { }
 
   //Section renders & updates food cart OnInit or by changing amounts of food items.
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class FoodCartComponent implements OnInit {
   }
 
 
-  renderFoodCart() {
+  public renderFoodCart() {    
     this.loadCartFromLocalStorage();
     this.checkEmptyCart();
     this.calculateCartSum();
@@ -30,7 +32,7 @@ export class FoodCartComponent implements OnInit {
   }
 
 
-  updateFoodCart() {
+  public updateFoodCart() {
     this.updateLocalStorage();
     this.checkEmptyCart();
     this.calculateCartSum();
@@ -106,19 +108,7 @@ export class FoodCartComponent implements OnInit {
       this.achievedMinimumSum = false;
     }
   }
-
-
-  // renderOrderButton() {
-  //   let buttonElement = document.getElementById('CartOrderButton');
-  //   buttonElement
-
-
-  //   // if (this.foodCartSum >= 6) {
-  //   //   orderBtn?.classList.remove('d-lightgrey');
-  //   //   orderBtn?.classList.add('d-primary');
-  //   //   console.log('Content of this.foodCartSum in function "renderOrderButton()', this.foodCartSum)
-  //   // }
-  // }
+  
 
 
   //*---------- LocalStorage Section ----------*//

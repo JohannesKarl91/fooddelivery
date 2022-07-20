@@ -1,5 +1,6 @@
-import { Component, OnInit, Inject, Provider } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FoodCartComponent } from '../food-cart/food-cart.component';
 
 @Component({
   selector: 'app-food-menu-list',
@@ -7,7 +8,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./food-menu-list.component.scss']
 })
 export class FoodMenuListComponent implements OnInit {
-  foodItemsToFoodCart : Array<any> = [];
+  foodItemsToFoodCart: Array<any> = [];
 
 
   constructor(public firestore: AngularFirestore, @Inject('FOODMENUFAVORITE') public foodMenuFavorite: any[],
@@ -17,13 +18,14 @@ export class FoodMenuListComponent implements OnInit {
     @Inject('FOODMENUSIDEDISH') public foodMenuSidedish: any[],
     @Inject('FOODMENUDESSERT') public foodMenuDessert: any[]) { }
 
-  ngOnInit(): void {  }
+
+  ngOnInit(): void { }
 
 
   //--*  Add-functions for all categories  *--//
   //Problem: Duplicates between favorite items and the items of other food categories
   addFavoriteToCart(id: any) {
-    var foodItem = this.foodMenuFavorite[id];
+    let foodItem = this.foodMenuFavorite[id];
 
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
@@ -38,18 +40,21 @@ export class FoodMenuListComponent implements OnInit {
 
 
   addApetizerToCart(id: any) {
-    var foodItem = this.foodMenuApetizer[id];
+    let foodItem = this.foodMenuApetizer[id];
+    let foodCartObject = new FoodCartComponent();
 
     if (this.foodItemsToFoodCart.includes(foodItem)) {
       let position = this.foodItemsToFoodCart.indexOf(foodItem);
       this.foodItemsToFoodCart[position].amount++;
       console.log('foodItemCart', this.foodItemsToFoodCart);
-      this.saveCartContentToLocalstorage()
+      this.saveCartContentToLocalstorage();
+      foodCartObject.updateFoodCart();
     }
     else {
       this.foodItemsToFoodCart.push(foodItem);
       console.log('foodItemCart', this.foodItemsToFoodCart);
-      this.saveCartContentToLocalstorage()
+      this.saveCartContentToLocalstorage();
+      foodCartObject.renderFoodCart();
     }
   }
 
@@ -125,7 +130,7 @@ export class FoodMenuListComponent implements OnInit {
   //Save local cart array data in local storage for further use in food-cart component.
   saveCartContentToLocalstorage() {
     var foodCartToJSON = JSON.stringify(this.foodItemsToFoodCart);
-    localStorage.setItem('cart', foodCartToJSON); 
+    localStorage.setItem('cart', foodCartToJSON);
   }
 }
 

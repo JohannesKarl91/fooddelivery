@@ -41,12 +41,13 @@ import { AngularFireModule } from '@angular/fire/compat';
     provideRemoteConfig(() => getRemoteConfig()),
     provideStorage(() => getStorage())
   ],
-  providers: [{ provide: 'FOODMENUFAVORITE', useValue: foodMenuFavorite },
+  providers: [FoodCartComponent,
+  { provide: 'FOODMENUFAVORITE', useValue: foodMenuFavorite },
   { provide: 'FOODMENUAPETIZER', useValue: foodMenuApetizer },
   { provide: 'FOODMENUCLASSICBURGER', useValue: foodMenuClassicburger },
   { provide: 'FOODMENUGOURMETBURGER', useValue: foodMenuGourmetburger },
   { provide: 'FOODMENUSIDEDISH', useValue: foodMenuSidedish },
-{provide: 'FOODMENUDESSERT', useValue: foodMenuDessert}],
+  {provide: 'FOODMENUDESSERT', useValue: foodMenuDessert}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
